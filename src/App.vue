@@ -1,10 +1,19 @@
-<script>
-
-</script>
-
 <template>
-  <h1>hello world</h1>
+  <div class="container">
+    <Header title="Temperature converter"/>
+  </div>
 </template>
+
+<script>
+import Header from "./components/Header.vue";
+
+export default {
+  name: "App",
+  components: {
+    Header,
+  }
+};
+</script>
 
 <style>
 </style>
