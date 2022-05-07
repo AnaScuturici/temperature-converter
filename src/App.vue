@@ -4,6 +4,7 @@
     <Input title="temperature"/>
     <Selections :options="['°C', '°F']"/>
     <Output text="output"/>
+    <Button text="Convert"/>
   </div>
 </template>
 
@@ -12,6 +13,7 @@ import Header from "./components/Header.vue";
 import Input from "./components/Input.vue";
 import Selections from "./components/Selections.vue";
 import Output from "./components/Output.vue";
+import Button from "./components/Button.vue";
 
 export default {
   name: "App",
@@ -20,6 +22,7 @@ export default {
     Input,
     Selections,
     Output,
+    Button
   }
 };
 </script>
