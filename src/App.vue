@@ -34,12 +34,18 @@ export default {
   },
   methods: {
     handleConvert() {
-      if(this.fromUnit === "°C") {
-        this.output = parseFloat(Math.round((this.temperature * 9/5) + 32));
-      } else if(this.fromUnit === "°F") {
-        this.output = parseFloat(Math.round((this.temperature - 32) * 5/9));
+      let result;
+      if(this.fromUnit === "°C" && this.toUnit === "°F") {
+        result = parseFloat(Math.round((this.temperature * 9/5) + 32));
+        this.output = `${this.temperature} ${this.fromUnit} = ${result} ${this.toUnit}`;
+      } else if(this.fromUnit === "°F" && this.toUnit === "°C") {
+        result = parseFloat(Math.round((this.temperature - 32) * 5/9));
+        this.output = `${this.temperature} ${this.fromUnit} = ${result} ${this.toUnit}`;
+      } else if(this.temperature === "") {
+        this.output = "Please enter temperature";
+      } else {
+        this.output = "Please select a unit of conversion";
       }
-      console.log(this.output);
     }
   }
 };
