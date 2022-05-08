@@ -3,7 +3,7 @@
     <Header title="Temperature converter"/>
     <Input title="temperature" v-model:temperature="temperature"/>
     <Selections :options="['°C', '°F']" />
-    <Output text="output"/>
+    <Output v-model:output="output"/>
     <Button text="Convert" @handle-convert="handleConvert"/>
   </div>
 </template>
@@ -29,12 +29,12 @@ export default {
       temperature: "",
       fromUnit: "",
       toUnit: "",
-      output: "",
+      output: "test",
     }
   },
   methods: {
     handleConvert() {
-      console.log(this.temperature);
+      console.log(this.output);
     }
   }
 };

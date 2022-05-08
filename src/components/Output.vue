@@ -1,6 +1,6 @@
 <template>
     <div>
-        <p>{{text}}</p>
+        <p :value="output" @input="$emit('update:output', $event.target.value)">{{output}}</p>
     </div>
 </template>
 
@@ -9,6 +9,10 @@ export default {
     name: "Output",
     props: {
         text: String,
+        output: {
+            type: String,
+            default: '',
+        },
     },
 }
 </script>
