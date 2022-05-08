@@ -2,7 +2,7 @@
   <div class="container">
     <Header title="Temperature converter"/>
     <Input title="temperature"/>
-    <Selections :options="['°C', '°F']"/>
+    <Selections :options="['°C', '°F']" />
     <Output text="output"/>
     <Button text="Convert"/>
   </div>
@@ -23,7 +23,15 @@ export default {
     Selections,
     Output,
     Button
-  }
+  },
+  data() {
+    return {
+      temperature: "",
+      fromUnit: "",
+      toUnit: "",
+      output: "",
+    }
+  },
 };
 </script>
 
