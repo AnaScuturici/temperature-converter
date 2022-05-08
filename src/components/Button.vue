@@ -18,5 +18,13 @@ export default {
 }
 </script>
 
-<style>
+<style scoped>
+button {
+    width: 100%;
+    height: 40px;
+    font-size: 19px;
+    border-radius: 3px;
+    background: #91aec4;
+    cursor: pointer;
+}
 </style>
