@@ -1,5 +1,5 @@
 <template>
-    <div>
+    <div class="output">
         <p :value="output" @input="$emit('update:output', $event.target.value)">{{output}}</p>
     </div>
 </template>
@@ -11,11 +11,28 @@ export default {
         text: String,
         output: {
             type: String,
-            default: '',
+            default: 'output',
         },
     },
 }
 </script>
 
-<style>
+<style scoped>
+.output {
+    height: 200px;
+    width: 250px;
+    border: 1px solid #5f84a2;
+    position: relative;
+    margin-top: 25px;
+    background: #fff;
+}
+p {
+    text-align: center;
+    margin: auto;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    margin: 0;
+}
 </style>
