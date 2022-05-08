@@ -1,14 +1,14 @@
 <template>
     <div>
         <p>From:</p>
-        <select v-model="selected">
+        <select :value="fromUnit" @change="$emit('update:fromUnit', $event.target.value)">
             <option disabled value="">Please select one</option>
-            <option v-for="(option, index) in options" :key="index" :value="option">{{option}}</option>
+            <option v-for="(option, index) in options" :key="index">{{option}}</option>
         </select>
         <p>To:</p>
-        <select v-model="selected">
+        <select :value="toUnit" @change="$emit('update:toUnit', $event.target.value)">
             <option disabled value="">Please select one</option>
-            <option v-for="(option, index) in options" :key="index" :value="option">{{option}}</option>
+            <option v-for="(option, index) in options" :key="index">{{option}}</option>
         </select>
     </div>
 </template>
@@ -17,8 +17,24 @@
 export default {
     name: "Selections",
     props: {
-        options: String,
+        options: {
+            type: Array,
+            default: [],
+        },
+        fromUnit: {
+            type: String,
+            default: '',
+        },
+        toUnit: {
+            type: String,
+            default: '',
+        }
     },
+    methods: {
+        handleSelect() {
+            this.$emit('select');
+        }
+    }
 }
 </script>
 
