@@ -28,6 +28,7 @@ input {
     width: 100%;
     height: 40px;
     padding-left: 20px;
+    font-size: 15px;
     border-color: 1px solid #5f84a2;
     cursor: pointer;
 }

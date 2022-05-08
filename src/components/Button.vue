@@ -22,7 +22,7 @@ export default {
 button {
     width: 100%;
     height: 40px;
-    font-size: 19px;
+    font-size: 17px;
     border-radius: 3px;
     background: #91aec4;
     cursor: pointer;

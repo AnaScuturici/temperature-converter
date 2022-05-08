@@ -58,6 +58,7 @@ export default {
 select {
     height: 40px;
     padding-left: 10px;
+    font-size: 15px;
     cursor: pointer;
 }
 

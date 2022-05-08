@@ -34,5 +34,6 @@ p {
     left: 50%;
     transform: translate(-50%, -50%);
     margin: 0;
+    font-size: 17px;
 }
 </style>
