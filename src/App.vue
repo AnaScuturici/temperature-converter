@@ -41,17 +41,17 @@ export default {
   methods: {
     handleConvert() {
       let result;
-      if (this.fromUnit === "°C" && this.toUnit === "°F") {
+      if (this.temperature === "") {
+        this.output = "Please enter temperature";
+      } else if(this.fromUnit === "" || this.toUnit === "" || this.fromUnit === this.toUnit){
+        this.output = "Please select a unit of conversion";
+      } else if (this.fromUnit === "°C" && this.toUnit === "°F") {
         result = parseFloat(Math.round((this.temperature * 9) / 5 + 32));
         this.output = `${this.temperature} ${this.fromUnit} = ${result} ${this.toUnit}`;
       } else if (this.fromUnit === "°F" && this.toUnit === "°C") {
         result = parseFloat(Math.round(((this.temperature - 32) * 5) / 9));
         this.output = `${this.temperature} ${this.fromUnit} = ${result} ${this.toUnit}`;
-      } else if (this.temperature === "") {
-        this.output = "Please enter temperature";
-      } else {
-        this.output = "Please select a unit of conversion";
-      }
+      } 
     },
   },
 };
