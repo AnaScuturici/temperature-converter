@@ -1,6 +1,5 @@
 <template>
   <div class="selections">
-    <p>From:</p>
     <select
       :value="fromUnit"
       @change="$emit('update:fromUnit', $event.target.value)"
@@ -10,7 +9,7 @@
         {{ option }}
       </option>
     </select>
-    <p>To:</p>
+    <i class="fa-solid fa-circle-arrow-right"></i>
     <select
       :value="toUnit"
       @change="$emit('update:toUnit', $event.target.value)"
@@ -60,5 +59,10 @@ select {
     height: 40px;
     padding-left: 10px;
     cursor: pointer;
+}
+
+.fa-solid {
+  justify-content: center;
+  margin-top: 15px;
 }
 </style>
