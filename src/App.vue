@@ -1,7 +1,7 @@
 <template>
   <div class="container">
     <Header title="Temperature converter"/>
-    <Input title="temperature"/>
+    <Input title="temperature" v-model:temperature="temperature"/>
     <Selections :options="['°C', '°F']" />
     <Output text="output"/>
     <Button text="Convert" @handle-convert="handleConvert"/>
@@ -34,7 +34,7 @@ export default {
   },
   methods: {
     handleConvert() {
-      console.log("click");
+      console.log(this.temperature);
     }
   }
 };

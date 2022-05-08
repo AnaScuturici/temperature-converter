@@ -1,7 +1,7 @@
 <template>
     <div>
         <p>Enter {{title}}:</p>
-        <input type="number">
+        <input type="number" :value="temperature" @input="$emit('update:temperature', $event.target.value)">
     </div>
 </template>
 
@@ -11,6 +11,10 @@ export default {
     props: {
         type: Number,
         title: String,
+        temperature: {
+            type: String,
+            default: '',
+        },
     },
 }
 </script>
