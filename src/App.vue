@@ -4,7 +4,7 @@
     <Input title="temperature"/>
     <Selections :options="['°C', '°F']" />
     <Output text="output"/>
-    <Button text="Convert"/>
+    <Button text="Convert" @handle-convert="handleConvert"/>
   </div>
 </template>
 
@@ -32,6 +32,11 @@ export default {
       output: "",
     }
   },
+  methods: {
+    handleConvert() {
+      console.log("click");
+    }
+  }
 };
 </script>
 

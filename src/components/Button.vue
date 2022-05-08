@@ -1,6 +1,6 @@
 <template>
     <div>
-       <button>{{text}}</button>
+       <button @click="onClick">{{text}}</button>
     </div>
 </template>
 
@@ -10,6 +10,11 @@ export default {
     props: {
         text: String
     },
+    methods: {
+        onClick() {
+            this.$emit('handle-convert');
+        }
+    }
 }
 </script>
 
