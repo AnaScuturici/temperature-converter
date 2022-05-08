@@ -34,7 +34,12 @@ export default {
   },
   methods: {
     handleConvert() {
-      console.log(this.fromUnit, this.toUnit);
+      if(this.fromUnit === "°C") {
+        this.output = parseFloat(Math.round((this.temperature * 9/5) + 32));
+      } else if(this.fromUnit === "°F") {
+        this.output = parseFloat(Math.round((this.temperature - 32) * 5/9));
+      }
+      console.log(this.output);
     }
   }
 };
