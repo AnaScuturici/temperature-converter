@@ -1,10 +1,16 @@
 <template>
+  <Header title="Temperature converter" />
   <div class="container">
-    <Header title="Temperature converter"/>
-    <Input title="temperature" v-model:temperature="temperature"/>
-    <Selections :options="['°C', '°F']"  v-model:fromUnit="fromUnit" v-model:toUnit="toUnit" />
-    <Output v-model:output="output"/>
-    <Button text="Convert" @handle-convert="handleConvert"/>
+    <div class="form">
+      <Input title="temperature" v-model:temperature="temperature" />
+      <Selections
+        :options="['°C', '°F']"
+        v-model:fromUnit="fromUnit"
+        v-model:toUnit="toUnit"
+      />
+      <Button text="Convert" @handle-convert="handleConvert" />
+    </div>
+    <Output v-model:output="output" />
   </div>
 </template>
 
@@ -22,7 +28,7 @@ export default {
     Input,
     Selections,
     Output,
-    Button
+    Button,
   },
   data() {
     return {
@@ -30,26 +36,57 @@ export default {
       fromUnit: "",
       toUnit: "",
       output: "",
-    }
+    };
   },
   methods: {
     handleConvert() {
       let result;
-      if(this.fromUnit === "°C" && this.toUnit === "°F") {
-        result = parseFloat(Math.round((this.temperature * 9/5) + 32));
+      if (this.fromUnit === "°C" && this.toUnit === "°F") {
+        result = parseFloat(Math.round((this.temperature * 9) / 5 + 32));
         this.output = `${this.temperature} ${this.fromUnit} = ${result} ${this.toUnit}`;
-      } else if(this.fromUnit === "°F" && this.toUnit === "°C") {
-        result = parseFloat(Math.round((this.temperature - 32) * 5/9));
+      } else if (this.fromUnit === "°F" && this.toUnit === "°C") {
+        result = parseFloat(Math.round(((this.temperature - 32) * 5) / 9));
         this.output = `${this.temperature} ${this.fromUnit} = ${result} ${this.toUnit}`;
-      } else if(this.temperature === "") {
+      } else if (this.temperature === "") {
         this.output = "Please enter temperature";
       } else {
         this.output = "Please select a unit of conversion";
       }
-    }
-  }
+    },
+  },
 };
 </script>
 
 <style>
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;500;700&display=swap");
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  margin: 0 auto;
+  font-family: "Noto Sans JP", sans-serif;
+  background: #d6e4ee;
+}
+
+.container {
+  display: flex;
+  gap: 1em;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding: 30px 0;
+}
+
+.form {
+  padding: 0 1em;
+}
+
+.form > * + * {
+  margin-top: 2rem;
+}
 </style>
