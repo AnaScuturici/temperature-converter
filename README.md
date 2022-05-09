@@ -34,22 +34,23 @@ A simple application which takes the temperature in Celcius as input, converts i
  
 # Built with  
 
-- [Vue 3](https://vuejs.org/) in [Vite](https://vitejs.dev/)
+- [Vue 3](https://vuejs.org/) in [Vite](https://vitejs.dev/)  
+- Hosted on [Vercel](https://temperature-converter-seven.vercel.app/).  
 
 ### Project Setup
 
 ```sh
 npm install
-```
-
-### Compile and Hot-Reload for Development
-
-```sh
-npm run dev
-```
+```  
 
 ### Compile
 
 ```sh
 npm run build
-```
+```  
+
+### Compile and Hot-Reload for Development
+
+```sh
+npm run dev
+```  
