@@ -1,16 +1,18 @@
 <template>
-  <Header title="Temperature converter" />
-  <div class="container">
-    <div class="form">
-      <Input title="temperature" v-model:temperature="temperature" />
-      <Selections
-        :options="['°C', '°F']"
-        v-model:fromUnit="fromUnit"
-        v-model:toUnit="toUnit"
-      />
-      <Button text="Convert" @handle-convert="handleConvert" />
+  <div class="app" :class="[mode ? 'dark' : 'light']">
+    <Header title="Temperature converter" :mode="mode" @toggle="toggle"/>
+    <div class="container">
+      <div class="form">
+        <Input title="temperature" v-model:temperature="temperature" />
+        <Selections
+          :options="['°C', '°F']"
+          v-model:fromUnit="fromUnit"
+          v-model:toUnit="toUnit"
+        />
+        <Button text="Convert" @handle-convert="handleConvert" />
+      </div>
+      <Output v-model:output="output" />
     </div>
-    <Output v-model:output="output" />
   </div>
 </template>
 
@@ -36,6 +38,7 @@ export default {
       fromUnit: "",
       toUnit: "",
       output: "",
+      mode: "dark",
     };
   },
   methods: {
@@ -43,7 +46,11 @@ export default {
       let result;
       if (this.temperature === "") {
         this.output = "Please enter temperature";
-      } else if(this.fromUnit === "" || this.toUnit === "" || this.fromUnit === this.toUnit){
+      } else if (
+        this.fromUnit === "" ||
+        this.toUnit === "" ||
+        this.fromUnit === this.toUnit
+      ) {
         this.output = "Please select a unit of conversion";
       } else if (this.fromUnit === "°C" && this.toUnit === "°F") {
         result = parseFloat(Math.round((this.temperature * 9) / 5 + 32));
@@ -51,8 +58,11 @@ export default {
       } else if (this.fromUnit === "°F" && this.toUnit === "°C") {
         result = parseFloat(Math.round(((this.temperature - 32) * 5) / 9));
         this.output = `${this.temperature} ${this.fromUnit} = ${result} ${this.toUnit}`;
-      } 
+      }
     },
+    toggle() {
+      this.mode = !this.mode;
+    }
   },
 };
 </script>
@@ -71,7 +81,19 @@ export default {
 body {
   margin: 0 auto;
   font-family: "Noto Sans JP", sans-serif;
+}
+
+.app {
+  min-height: 100vh;
+  width: 100vw;
   background: #d6e4ee;
+  color: #031827;
+  transition: background 0.3s ease-in-out;
+}
+
+.dark {
+  background: #031827;
+  color: #f3f3f3;
 }
 
 .container {
