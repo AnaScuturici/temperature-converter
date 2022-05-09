@@ -2,7 +2,7 @@
   <div>
     <i
       @click="toggle"
-      :class="[isActive ? 'fa-toggle-off' : 'fa-toggle-on', 'fa-solid']"
+      :class="[isActive ? 'fa-toggle-on' : 'fa-toggle-off', 'fa-solid']"
     ></i>
   </div>
 </template>
