@@ -59,6 +59,7 @@ select {
     height: 40px;
     padding-left: 10px;
     font-size: 15px;
+    color: #031827;
     cursor: pointer;
 }
 
