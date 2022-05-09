@@ -25,6 +25,7 @@ export default {
     position: relative;
     margin-top: 25px;
     background: #fff;
+    border-radius: 3px;
 }
 p {
     text-align: center;

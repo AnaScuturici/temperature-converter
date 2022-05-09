@@ -60,6 +60,7 @@ select {
     padding-left: 10px;
     font-size: 15px;
     color: #031827;
+    border-radius: 3px;
     cursor: pointer;
 }
 

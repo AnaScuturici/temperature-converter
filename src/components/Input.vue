@@ -30,6 +30,7 @@ input {
     padding-left: 20px;
     font-size: 15px;
     border-color: 1px solid #5f84a2;
+    border-radius: 3px;
     cursor: pointer;
 }
 </style>
