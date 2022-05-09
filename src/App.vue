@@ -1,5 +1,5 @@
 <template>
-  <div class="app" :class="[mode ? 'dark' : 'light']">
+  <div class="app" :class="[mode ? 'light' : 'dark']">
     <Header title="Temperature converter" :mode="mode" @toggle="toggle"/>
     <div class="container">
       <div class="form">

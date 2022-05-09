@@ -4,7 +4,7 @@
       :value="fromUnit"
       @change="$emit('update:fromUnit', $event.target.value)"
     >
-      <option disabled value="">Please select one</option>
+      <option disabled value="">Please select a unit</option>
       <option v-for="(option, index) in options" :key="index">
         {{ option }}
       </option>
@@ -14,7 +14,7 @@
       :value="toUnit"
       @change="$emit('update:toUnit', $event.target.value)"
     >
-      <option disabled value="">Please select one</option>
+      <option disabled value="">Please select a unit</option>
       <option v-for="(option, index) in options" :key="index">
         {{ option }}
       </option>
