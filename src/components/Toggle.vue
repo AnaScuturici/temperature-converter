@@ -33,5 +33,6 @@ export default {
 <style scoped>
 .fa-solid {
   font-size: 30px;
+  color: #f1b948;
 }
 </style>

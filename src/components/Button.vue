@@ -24,7 +24,8 @@ button {
     height: 40px;
     font-size: 17px;
     border-radius: 3px;
-    background: #91aec4;
+    background: #f1b948;
+    border: none;
     cursor: pointer;
 }
 </style>
