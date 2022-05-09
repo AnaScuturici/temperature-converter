@@ -35,5 +35,6 @@ p {
     transform: translate(-50%, -50%);
     margin: 0;
     font-size: 17px;
+    color: #031827;
 }
 </style>
